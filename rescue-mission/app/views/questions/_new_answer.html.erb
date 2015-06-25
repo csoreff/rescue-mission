@@ -1,0 +1,17 @@
+<br>
+<%= form_for [@question, @answer] do |f| %>
+      <div class="new_answer">
+          <%= f.label :answer, "Answer this question:" %><br>
+          <%= f.text_field :answer %>
+      </div>
+
+      <div class="action">
+          <%= f.submit %>
+      </div>
+<% end %>
+<br><br>
+<% @answers.each do |answer| %>
+<%= answer.answer %><br>
+<%= "Submitted by user ##{answer.user_id}" %><br>
+<br>
+<% end %>
